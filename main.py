@@ -22,28 +22,52 @@ SOFTWARE."""
 intro = "You wake up on the ground in a strange place. It's dark, but \
 you see light coming from an opening to your left. (possible options: \
 walk left, look around more)"
+
 print(intro)
 print()
-playerOption = str(input())
-if playerOption == "walk left":
-    print("You slowly get up and walk down a corridor. While walking \
-you discover a sword. Do you pick it up? (possible options: yes, no)")
-    print()
-    playerOption = str(input())
-elif playerOption == "look around more":
-    print("You look closer at your surroundings and realize that you're in \
-a cave of some sort. You have nothing on you but your clothes. (possible \
-options: walk left)")
-    print()
-    playerOption = str(input())
-    if playerOption == "walk left":
+pOption = ""
+while pOption != "walk left":
+    pOption = str(input())
+    if pOption == "walk left":
         print("You slowly get up and walk down a corridor. While walking \
 you discover a sword. Do you pick it up? (possible options: yes, no)")
-        print()
-        playerOption = str(input())
+    elif pOption == "look around more":
+        print("You look closer at your surroundings and realize that you're in \
+a cave of some sort. You have nothing on you but your clothes. (possible \
+options: walk left)")
     else:
         print("input a valid action")
-        print()
-else:
-    print("input a valid action")
+    print()
+
+while pOption != "yes" and pOption != "no":
+    pOption = str(input())
+    if pOption == "yes":
+        print("You go to pick up the sword but some otherworldly \
+power will not let you pick it up. You decide to leave it for now.")
+    elif pOption == "no":
+        print("You walk around the sword.")
+    else:
+        print("input a valid action")
+    print()
+
+print("You continue walking down the corridor until you reach what seems to be \
+a dead end. On further analysis you realize that you are standing in front of \
+what appears to be a locked door. (possible actions: shove open, look for \
+key, examine door, throw rock at it)'")
+
+while (pOption != "examine door"):
+    pOption = str(input())
+    if pOption == "shove open":
+        print("You try shoving the door but it won\'t budge.")
+    elif pOption == "look for key":
+        print("You look around for a key but don\'t see anything.")
+    elif pOption == "examine door":
+        print("You examine the door further and realize there is a knob. \
+How did you miss that eartlier? You turn the knob and the door opens. That was \
+easier than you were expecting.")
+    elif pOption == "throw rock at it":
+        print("You throw a rock at the door and it bounces back and hits \
+you. You realize what a silly decision that was.")
+    else:
+        print("input a valid action")
     print()
