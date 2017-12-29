@@ -23,6 +23,8 @@ intro = "You wake up on the ground in a strange place. It's dark, but \
 you see light coming from an opening to your left. (possible options: \
 walk left, look around more)"
 
+inventory = []
+
 print(intro)
 print()
 pOption = ""
@@ -42,8 +44,8 @@ options: walk left)")
 while pOption != "yes" and pOption != "no":
     pOption = str(input())
     if pOption == "yes":
-        print("You go to pick up the sword but some otherworldly \
-power will not let you pick it up. You decide to leave it for now.")
+        print("You go to pick up the sword and put it in your inventory.")
+        inventory.append("Sword")
     elif pOption == "no":
         print("You walk around the sword.")
     else:
@@ -68,6 +70,8 @@ easier than you were expecting.")
     elif pOption == "throw rock at it":
         print("You throw a rock at the door and it bounces back and hits \
 you. You realize what a silly decision that was.")
+    elif pOption == "/inventory":
+        print(inventory)
     else:
         print("input a valid action")
     print()
