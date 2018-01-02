@@ -24,10 +24,21 @@ you see light coming from an opening to your left. (possible options: \
 walk left, look around more)"
 
 inventory = []
+health = 100
+
+pOption = ""
+
+
+def checkDefaultOptions(pOption):
+    if pOption == "/inventory":
+        print(inventory)
+    elif pOption == "/health":
+        print(str(health))
+    else:
+        print("input a valid action")
 
 print(intro)
 print()
-pOption = ""
 while pOption != "walk left":
     pOption = str(input())
     if pOption == "walk left":
@@ -38,7 +49,7 @@ you discover a sword. Do you pick it up? (possible options: yes, no)")
 a cave of some sort. You have nothing on you but your clothes. (possible \
 options: walk left)")
     else:
-        print("input a valid action")
+        checkDefaultOptions(pOption)
     print()
 
 while pOption != "yes" and pOption != "no":
@@ -49,7 +60,7 @@ while pOption != "yes" and pOption != "no":
     elif pOption == "no":
         print("You walk around the sword.")
     else:
-        print("input a valid action")
+        checkDefaultOptions(pOption)
     print()
 
 print("You continue walking down the corridor until you reach what seems to be \
@@ -73,5 +84,5 @@ you. You realize what a silly decision that was.")
     elif pOption == "/inventory":
         print(inventory)
     else:
-        print("input a valid action")
+        checkDefaultOptions(pOption)
     print()
